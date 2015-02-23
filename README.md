@@ -1,6 +1,6 @@
 ### discourse-details
 
-HTML 5.1 polyfill for [Discourse](https://www.discourse.org).
+HTML 5.1 `<details>` polyfill for [Discourse](https://www.discourse.org).
 
 ## Usage
 
