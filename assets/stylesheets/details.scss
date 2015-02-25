@@ -3,6 +3,10 @@
  * https://github.com/chemerisuk/better-details-polyfill/blob/master/src/main.css
  */
 
+details {
+  position: relative;
+}
+
 /*  Use tilda instead of the child selector to handle error
   case when several <summary> elements were specified */
 summary:first-child ~ * {
