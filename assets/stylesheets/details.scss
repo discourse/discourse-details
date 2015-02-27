@@ -2,7 +2,8 @@ details {
   position: relative;
 }
 
-details > * {
+details > *,
+details .lightbox-wrapper {
   display: none;
 }
 
