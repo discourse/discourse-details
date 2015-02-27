@@ -1,65 +1,32 @@
-/*
- * LARGELY INSPIRED FROM
- * https://github.com/chemerisuk/better-details-polyfill/blob/master/src/main.css
- */
-
 details {
   position: relative;
 }
 
-/*  Use tilda instead of the child selector to handle error
-  case when several <summary> elements were specified */
-summary:first-child ~ * {
+details > * {
   display: none;
 }
 
-details[open] > *, details.open > * {
+summary:first-of-type {
+  cursor: pointer;
   display: block;
 }
 
-/*  IE8 has weird issue with updating state of pseudoelements.
-  So use a triangle symbol for it instead to fix that quirks */
-details:before {
+summary:before {
   content: '\25BA';
-  font-family: serif;
-  font-size: 0.75em;
-  margin-top: 0.25em;
-  margin-left: 0.25em;
-  position: absolute;
+  margin-right: .25em;
 }
 
-details[open]:before, details.open:before {
+details[open] > summary:before,
+details.open  > summary:before {
   content: '\25BC';
 }
 
-summary:first-child {
-  text-indent: 1.25em;
+details[open] > summary:first-of-type ~ *,
+details.open  > summary:first-of-type ~ * {
+  display: block;
 }
 
-/*  For modern browsers use border to draw the triangle */
-details::before {
-  content: '';
-
-  width: 0;
-  height: 0;
-  border: solid transparent;
-  border-left-color: inherit;
-  border-width: 0.35em 0.5em;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-
-  /* use scale to apply antialiasing on the triangle */
-  transform: rotate(0deg) scale(1.5);
-  transform-origin: 25% 50%;
-  transition: transform 0.15s ease-out;
-}
-
-details[open]::before, details.open::before {
-  content: '';
-  transform: rotate(90deg) scale(1.5);
-}
-
-/* hide native indicator and use pseudoelement instead */
+/* hide native indicator */
 summary::-webkit-details-marker {
   display: none;
 }

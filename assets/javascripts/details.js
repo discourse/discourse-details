@@ -28,8 +28,7 @@
   })(document);
 
   function toggleOpen($details) {
-    $details.prop("open", !$details.prop("open"))
-            .toggleClass("open");
+    $details.toggleClass("open");
   }
 
   $.fn.details = function() {

@@ -4,7 +4,7 @@ export default {
   name: "apply-details",
 
   initialize(container) {
-    decorateCooked(container, $elem => $("details", $elem).details() );
+    decorateCooked(container, $elem => $("details", $elem).details());
   }
 
 };

@@ -2,6 +2,8 @@
 
 HTML 5.1 `<details>` polyfill for [Discourse](https://www.discourse.org).
 
+NOTE: Does not work on IE9.
+
 ## Usage
 
 In your posts, surround text with `[details=your summary]` ... `[/details]`.
