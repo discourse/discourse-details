@@ -19,7 +19,7 @@
     // can we open it?
     var diff = el.offsetHeight;
     el.open = true;
-    diff = diff != el.offsetHeight;
+    diff = diff !== el.offsetHeight;
     // cleanup
     root.removeChild(el);
     if (fake) { root.parentNode.removeChild(root); }
@@ -43,11 +43,11 @@
       $firstSummary.on("keydown", function(event) {
         if (event.keyCode === 32 /* SPACE */ || event.keyCode === 13 /* ENTER */) {
           toggleOpen($details);
-          return false
+          return false;
         }
       });
 
-      $firstSummary.on("click", function(event) {
+      $firstSummary.on("click", function() {
         $firstSummary.focus();
         toggleOpen($details);
       });
